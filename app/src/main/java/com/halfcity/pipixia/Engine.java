@@ -104,7 +104,7 @@ public final class Engine {
         installCrashLogger();
         TargetHooks.install(cl);
         SelfAds.install(cl);
-        ExtraHooks.install(cl);
+        // ExtraHooks 已停用：红点 / 更新 / 倍速 / 信息流净化全部下线
         AutoActions.install();
         MineEntry.install(cl);
     }

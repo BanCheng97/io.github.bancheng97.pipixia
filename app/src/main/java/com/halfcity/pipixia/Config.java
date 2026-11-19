@@ -37,21 +37,21 @@ public final class Config {
     public static volatile boolean hookAdNotify = true;
 
     /** 皮皮虾自己封装的广告加载方法（loadXxxAd/showXxxAd） */
-    public static volatile boolean hookAdLocal = true;
+    public static volatile boolean hookAdLocal = false;
     /** 开屏广告（类名/方法名带 splash） */
     public static volatile boolean hookSplash = true;
     /** 信息流广告：列表里带广告标记的条目直接摘掉 */
-    public static volatile boolean hookFeed = true;
+    public static volatile boolean hookFeed = false;
     /** 广告弹窗 / 浮层 / 插屏 */
-    public static volatile boolean hookPopup = true;
+    public static volatile boolean hookPopup = false;
     /** isShowAd / canShowAd / hasAd 这类开关全部返回 false */
-    public static volatile boolean hookAdSwitch = true;
+    public static volatile boolean hookAdSwitch = false;
     /** 广告数据模型（xxxAdInfo / xxxAdConfig）构造时把字段刷成“无广告” */
-    public static volatile boolean patchAdModel = true;
+    public static volatile boolean patchAdModel = false;
     /** 把扫到的目标包类名导出成 pipixia_classes.txt，版本更新后照着补规则 */
     public static volatile boolean dumpClasses = false;
     /** 自动送神评：评论右侧「送神评」按钮一出现就替你点 */
-    public static volatile boolean autoShen = true;
+    public static volatile boolean autoShen = false;
     /** 两次点击的最小间隔 ms（防连点、防误触） */
     public static volatile int autoShenInterval = 1500;
     /** 单次进程最多点几次，到上限就停 */
@@ -83,13 +83,13 @@ public final class Config {
     /* ---- 3.0 扩展 ---- */
     /** 扩展功能总开关（出问题可以一键关掉，只留去广告+去水印） */
     /** 去红点 */
-    public static volatile boolean removeRedDot = true;
+    public static volatile boolean removeRedDot = false;
     /** 禁更新 */
-    public static volatile boolean disableUpdate = true;
+    public static volatile boolean disableUpdate = false;
     /** 正常速倍速，1.0 = 不改 */
     public static volatile float playSpeed = 1.0f;
     /** 信息流净化总开关 */
-    public static volatile boolean cleanFeed = true;
+    public static volatile boolean cleanFeed = false;
     public static volatile boolean removeLive = true;
     public static volatile boolean removePromo = true;
     public static volatile boolean removeOfficial = false;
@@ -120,16 +120,16 @@ public final class Config {
     /** 代码里的默认值（迁移旧配置时用） */
     private static void resetDefaults() {
         safe = false; debug = true;
-        hookAdSdk = true; hookAdNotify = true; hookAdLocal = true; hookSelfAds = true;
-        hookSplash = true; hookFeed = true; hookPopup = true; hookAdSwitch = true;
-        patchAdModel = true; dumpClasses = false;
-        autoShen = true; autoShenInterval = 1500; autoShenMax = 30;
+        hookAdSdk = true; hookAdNotify = true; hookAdLocal = false; hookSelfAds = true;
+        hookSplash = true; hookFeed = false; hookPopup = false; hookAdSwitch = false;
+        patchAdModel = false; dumpClasses = false;
+        autoShen = false; autoShenInterval = 1500; autoShenMax = 30;
         entryMine = true; cleanVideo = true; dexScan = true;
         logs = false; statusFile = true; crashFile = true; discover = false;
         dumpUrls = false; hideWmView = true; hookWmMethod = true;
         scanAfterUi = true; scanSeconds = 180;
-        removeRedDot = true; disableUpdate = true; playSpeed = 1.0f;
-        cleanFeed = true; removeLive = true; removePromo = true; removeOfficial = false;
+        removeRedDot = false; disableUpdate = false; playSpeed = 1.0f;
+        cleanFeed = false; removeLive = false; removePromo = false; removeOfficial = false;
         saveImage = true; blockKeywords = new String[0];
         skipMethods.clear(); forces.clear(); extraPrefixes.clear();
     }

@@ -174,6 +174,7 @@ public class SettingsActivity extends Activity {
         info.addView(kv("作者", "半城"));
         info.addView(kv("模块版本", "v" + MainHook.VERSION));
         info.addView(kv("适配版本", "皮皮虾 6.6.1"));
+        info.addView(kv("当前版本", installedVersion()));
         info.addView(kv("适配环境", "Android 12 · arm64-v8a"));
         info.addView(kv("模块包名", "io.github.bancheng97.pipixia"));
         info.addView(kv("目标应用", "com.sup.android.superb"));
@@ -185,6 +186,19 @@ public class SettingsActivity extends Activity {
         tip.setTextSize(TypedValue.COMPLEX_UNIT_SP, 11);
         tip.setPadding(0, dp(10), 0, 0);
         card.addView(tip);
+    }
+
+    /** 皮皮虾当前安装版本，附适配判定 */
+    private String installedVersion() {
+        try {
+            android.content.pm.PackageInfo pi = getPackageManager()
+                    .getPackageInfo("com.sup.android.superb", 0);
+            String v = pi.versionName == null ? "?" : pi.versionName;
+            boolean ok = "6.6.1".equals(v);
+            return v + (ok ? " · 已适配" : " · 未验证");
+        } catch (Throwable t) {
+            return "未安装";
+        }
     }
 
     private View kv(String key, String value) {
