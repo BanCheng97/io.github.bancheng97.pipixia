@@ -4,7 +4,7 @@
 
 - 模块包名：`io.github.bancheng97.pipixia`
 - 作者：半城
-- 当前版本：**6.0**（versionCode 31）
+- 当前版本：**6.1**（versionCode 32）
 - 适配：皮皮虾 **6.6.1** / Android 12 / arm64-v8a / LSPosed 2.2.1（API 102）
 - 许可：GPL-3.0
 
@@ -119,7 +119,7 @@ hook 生成 tab 列表的方法（`com.sup.android.m_mine.utils` 下、带 `Cont
 
 ## 安装
 
-1. 装 `pipixia-adfree-v6.0-release.apk`；
+1. 装 `pipixia-adfree-v6.1-release.apk`；
 2. LSPosed 管理器 → 模块 → 启用「皮皮虾净化」→ 作用域勾选 **皮皮虾**；
 3. 设置 → 应用 → 皮皮虾 → **强行停止**，再打开（模块只在进程启动时注入）。
 
@@ -180,6 +180,7 @@ hook 生成 tab 列表的方法（`com.sup.android.m_mine.utils` 下、带 `Cont
 | 5.3–5.4 | 关掉开关即删旧文件；日志总开关（默认关） |
 | 5.5 | 日志搬进模块数据目录，卸载即清 |
 | 6.0 | 包名改 `io.github.bancheng97.pipixia`，上架 LSPosed 模块仓库 |
+| 6.1 | 修换包名后「更多功能 → 净化设置」拉起失败（`SETTINGS_PKG` 还指旧包名） |
 
 ---
 
@@ -190,7 +191,7 @@ hook 生成 tab 列表的方法（`com.sup.android.m_mine.utils` 下、带 `Cont
 ```bash
 ./build_local.sh
 # javac → d8 → aapt → apksigner
-# 产物：build/pipixia-adfree-6.0.apk（已签名 v1+v2）
+# 产物：build/pipixia-adfree-6.1.apk（已签名 v1+v2）
 ```
 
 依赖：`openjdk-17`、`aapt`、`/root/android/{android.jar,d8.jar,apksigner.jar}`、Xposed API 82（`api-82.jar`）。

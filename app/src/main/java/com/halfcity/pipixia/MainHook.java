@@ -19,13 +19,13 @@ public class MainHook implements IXposedHookLoadPackage {
 
     public static final String TAG = "[PXXHook] ";
     public static final String AUTHOR = "半城";
-    public static final String VERSION = "6.0";
+    public static final String VERSION = "6.1";
 
     /** 皮皮虾包名（红魔 7S Pro 上实测 6.6.1 是这个） */
     public static final String[] TARGET_PACKAGES = {"com.sup.android.superb"};
 
     /** 设置 Activity 在模块自己的包里，跨 App 拉起 */
-    public static final String SETTINGS_PKG = "com.halfcity.pipixia";
+    public static final String SETTINGS_PKG = "io.github.bancheng97.pipixia";
     public static final String SETTINGS_CLASS = "com.halfcity.pipixia.SettingsActivity";
 
     public static volatile String pkg;

@@ -12,7 +12,7 @@ import java.io.OutputStreamWriter;
  * 日志落盘（5.5 起改到**模块自己的数据目录**，不再往下载目录丢文件）。
  *
  * 为什么绕一圈：日志是皮皮虾进程产生的，但文件要放在模块 App 的
- * `/data/data/com.halfcity.pipixia/files/logs/`，两个 uid 不能直接写。
+ * `/data/data/io.github.bancheng97.pipixia/files/logs/`，两个 uid 不能直接写。
  * 所以还是走 PrefsProvider：皮皮虾进程 call("log", name, {text})，
  * provider 在模块进程里把文件写下去。**卸载模块 = 日志一起消失。**
  *
