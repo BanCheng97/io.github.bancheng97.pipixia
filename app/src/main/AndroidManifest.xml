@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="io.github.bancheng97.pipixia"
-    android:versionCode="32"
-    android:versionName="6.1">
+    android:versionCode="33"
+    android:versionName="6.2">
 
     <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28" />
 
@@ -13,13 +13,13 @@
         android:allowBackup="false">
 
         <activity
-            android:name=".SettingsActivity"
+            android:name="com.halfcity.pipixia.SettingsActivity"
             android:label="皮皮虾净化 · 半城"
             android:exported="true"
             android:theme="@android:style/Theme.DeviceDefault.NoActionBar" />
 
         <provider
-            android:name=".PrefsProvider"
+            android:name="com.halfcity.pipixia.PrefsProvider"
             android:authorities="io.github.bancheng97.pipixia.prefs"
             android:exported="true" />
 

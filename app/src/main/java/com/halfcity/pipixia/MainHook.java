@@ -19,7 +19,7 @@ public class MainHook implements IXposedHookLoadPackage {
 
     public static final String TAG = "[PXXHook] ";
     public static final String AUTHOR = "半城";
-    public static final String VERSION = "6.1";
+    public static final String VERSION = "6.2";
 
     /** 皮皮虾包名（红魔 7S Pro 上实测 6.6.1 是这个） */
     public static final String[] TARGET_PACKAGES = {"com.sup.android.superb"};
