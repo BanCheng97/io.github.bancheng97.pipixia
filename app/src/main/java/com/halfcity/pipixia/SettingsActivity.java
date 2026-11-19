@@ -84,7 +84,7 @@ public class SettingsActivity extends Activity {
         root.addView(title);
 
         TextView sub = new TextView(this);
-        sub.setText("v" + MainHook.VERSION + " · 半城");
+        sub.setText("v" + MainHook.VERSION + " · 作者：半城");
         sub.setTextColor(ACCENT);
         sub.setTextSize(TypedValue.COMPLEX_UNIT_SP, 13);
         sub.setPadding(0, dp(4), 0, 0);

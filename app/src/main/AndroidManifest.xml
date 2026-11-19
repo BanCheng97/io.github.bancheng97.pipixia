@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="io.github.bancheng97.pipixia"
-    android:versionCode="33"
-    android:versionName="6.2">
+    android:versionCode="34"
+    android:versionName="6.3">
 
     <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28" />
 
     <application
         android:icon="@mipmap/ic_launcher"
-        android:label="皮皮虾净化 · 半城"
+        android:label="皮皮虾净化"
         android:hasCode="true"
         android:allowBackup="false">
 
         <activity
             android:name="com.halfcity.pipixia.SettingsActivity"
-            android:label="皮皮虾净化 · 半城"
+            android:label="皮皮虾净化"
             android:exported="true"
             android:theme="@android:style/Theme.DeviceDefault.NoActionBar" />
 
