@@ -155,59 +155,36 @@ public class SettingsActivity extends Activity {
         return tv;
     }
 
-    /* ---------------- 版本适配验证 ---------------- */
-
-    private static final String[][] ADAPT_ITEMS = {
-            {"adapt_pkg", "皮皮虾版本"},
-            {"adapt_dexCount", "dex 类总数"},
-            {"adapt_videoModel", "播放模型 VideoModel#getUrlList"},
-            {"adapt_download", "下载入口 VideoDownloadHelper"},
-            {"adapt_selfads", "自研广告 m_ad 适配"},
-            {"adapt_splash", "开屏广告类"},
-            {"adapt_stats", "上次运行计数"},
-            {"adapt_time", "最近一次自检时间"},
-    };
+    /* ---------------- 作者信息 / 适配版本 ---------------- */
 
     private void adaptSection() {
         LinearLayout card = card();
         root.addView(card);
 
         TextView title = new TextView(this);
-        title.setText("版本适配验证");
+        title.setText("作者信息");
         title.setTextColor(TEXT);
         title.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15);
         title.setTypeface(title.getTypeface(), android.graphics.Typeface.BOLD);
         card.addView(title);
 
+        LinearLayout info = new LinearLayout(this);
+        info.setOrientation(LinearLayout.VERTICAL);
+        info.setPadding(0, dp(10), 0, 0);
+        info.addView(kv("作者", "半城"));
+        info.addView(kv("模块版本", "v" + MainHook.VERSION));
+        info.addView(kv("适配版本", "皮皮虾 6.6.1"));
+        info.addView(kv("适配环境", "Android 12 · arm64-v8a"));
+        info.addView(kv("模块包名", "io.github.bancheng97.pipixia"));
+        info.addView(kv("目标应用", "com.sup.android.superb"));
+        card.addView(info);
+
         TextView tip = new TextView(this);
-        tip.setText("下面这些是模块在皮皮虾进程里自检出来的结果，打开一次皮皮虾后会自动刷新。");
+        tip.setText("皮皮虾更新后如果去广告/去水印失效，多半是宿主改了类名，等模块更新。");
         tip.setTextColor(SUB);
         tip.setTextSize(TypedValue.COMPLEX_UNIT_SP, 11);
-        tip.setPadding(0, dp(4), 0, dp(8));
+        tip.setPadding(0, dp(10), 0, 0);
         card.addView(tip);
-
-        boolean any = false;
-        for (String[] item : ADAPT_ITEMS) {
-            String v = PrefsStore.get(this, item[0], "");
-            if (v == null || v.length() == 0) v = "—";
-            if (!"—".equals(v)) any = true;
-            card.addView(kv(item[1], v));
-        }
-
-        TextView verdict = new TextView(this);
-        if (!any) {
-            verdict.setText("还没采集到：打开一次皮皮虾，再回来看。");
-            verdict.setTextColor(SUB);
-        } else {
-            boolean ok = "已找到".equals(PrefsStore.get(this, "adapt_videoModel", ""))
-                    || "已找到".equals(PrefsStore.get(this, "adapt_download", ""));
-            verdict.setText(ok ? "结论：关键挂钩点已适配当前版本"
-                    : "结论：关键挂钩点没命中，版本变了，需要更新挂钩点");
-            verdict.setTextColor(ok ? ON : ACCENT);
-        }
-        verdict.setTextSize(TypedValue.COMPLEX_UNIT_SP, 12);
-        verdict.setPadding(0, dp(8), 0, 0);
-        card.addView(verdict);
     }
 
     private View kv(String key, String value) {
