@@ -1,7 +1,7 @@
 # 皮皮虾净化 · 皮皮虾去广告模块（半城）
 
 - 作者：半城　版本 5.2
-- 模块包名：`com.halfcity.pipixia`
+- 模块包名：`io.github.bancheng97.pipixia`
 - 目标：`com.sup.android.superb`（皮皮虾，截图那台是 **6.6.1**，红魔 7S Pro / Android 12）
 - 产物：`build/pipixia-adfree-5.2.apk`（已签名 v1+v2，可直装；桌面也会出现图标）
 
@@ -19,7 +19,7 @@
 不再往 `/sdcard/Download/DSH-Go/` 丢文件了。日志现在写在这里：
 
 ```
-/data/data/com.halfcity.pipixia/files/logs/
+/data/data/io.github.bancheng97.pipixia/files/logs/
   pipixia_status.txt
   pipixia_crash.txt
   pipixia_hooks.txt
@@ -170,7 +170,7 @@ provider 挂了就退到皮皮虾自己的私有目录（卸载皮皮虾也会�
   皮皮虾版本、dex 类总数、`VideoModel#getUrlList`、`VideoDownloadHelper`、自研广告类数/挂载数、
   开屏类命中数、上次运行计数、自检时间，并给一句结论（关键挂钩点是否命中当前版本）。
 
-数据是谁填的：皮皮虾进程里跑完自检后，通过 `PrefsProvider`（`content://com.halfcity.pipixia.prefs`）
+数据是谁填的：皮皮虾进程里跑完自检后，通过 `PrefsProvider`（`content://io.github.bancheng97.pipixia.prefs`）
 把结果 call 进模块 App 的 SharedPreferences，设置界面直接读——所以**打开一次皮皮虾再回来看**就有值。
 
 ## 〇七、4.0 每个功能一个开关（设置界面）
@@ -187,7 +187,7 @@ provider 挂了就退到皮皮虾自己的私有目录（卸载皮皮虾也会�
 改完 **强行停止皮皮虾再打开** 生效。
 
 实现上是怎么跨进程的：皮皮虾进程读不到模块 App 的 SharedPreferences，模块 App 也写不进皮皮虾目录，
-所以模块 App 里放了个 `PrefsProvider`（authority `com.halfcity.pipixia.prefs`），
+所以模块 App 里放了个 `PrefsProvider`（authority `io.github.bancheng97.pipixia.prefs`），
 皮皮虾进程里的 `Config` 用 `ContentResolver.call(..., "all")` 一次性拉全部键值，
 优先级：**设置界面 > pipixia_adfree.conf > 代码默认值**。
 

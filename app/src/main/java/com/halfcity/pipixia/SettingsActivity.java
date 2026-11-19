@@ -441,7 +441,7 @@ public class SettingsActivity extends Activity {
             String t = null;
             try {
                 android.os.Bundle b = getContentResolver().call(
-                        android.net.Uri.parse("content://com.halfcity.pipixia.prefs"), "logread", n, null);
+                        android.net.Uri.parse("content://io.github.bancheng97.pipixia.prefs"), "logread", n, null);
                 t = b == null ? null : b.getString("text");
             } catch (Throwable ignored) {}
             all.append("==== ").append(n).append(" ====\n");
@@ -466,7 +466,7 @@ public class SettingsActivity extends Activity {
 
     private void clearLogs() {
         try {
-            getContentResolver().call(android.net.Uri.parse("content://com.halfcity.pipixia.prefs"), "logclear", null, null);
+            getContentResolver().call(android.net.Uri.parse("content://io.github.bancheng97.pipixia.prefs"), "logclear", null, null);
             toast("日志已清空");
         } catch (Throwable t) { toast("清空失败"); }
     }
@@ -478,7 +478,7 @@ public class SettingsActivity extends Activity {
         for (String n : names) {
             try {
                 android.os.Bundle b = getContentResolver().call(
-                        android.net.Uri.parse("content://com.halfcity.pipixia.prefs"), "logexport", n, null);
+                        android.net.Uri.parse("content://io.github.bancheng97.pipixia.prefs"), "logexport", n, null);
                 if (b != null && b.getBoolean("ok")) ok++;
             } catch (Throwable ignored) {}
         }

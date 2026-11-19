@@ -24,13 +24,13 @@ import java.util.List;
  * 解法就是 ContentProvider：模块 App 把「键值」暴露出来，皮皮虾进程里的 Config 用
  * ContentResolver 查一下，绕过跨进程/权限限制。
  *
- *   content://com.halfcity.pipixia.prefs/all         → 全部键值（k, v 两列）
- *   content://com.halfcity.pipixia.prefs/get/<key>   → 单个值（v 一列）
+ *   content://io.github.bancheng97.pipixia.prefs/all         → 全部键值（k, v 两列）
+ *   content://io.github.bancheng97.pipixia.prefs/get/<key>   → 单个值（v 一列）
  *   插入：values{k, v} 或 Uri 带 k，即可写入
  */
 public class PrefsProvider extends ContentProvider {
 
-    public static final String AUTHORITY = "com.halfcity.pipixia.prefs";
+    public static final String AUTHORITY = "io.github.bancheng97.pipixia.prefs";
 
     private static final int ALL = 1;
     private static final int GET = 2;

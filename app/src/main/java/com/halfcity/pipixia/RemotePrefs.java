@@ -14,7 +14,7 @@ import java.util.Set;
  */
 final class RemotePrefs {
 
-    private static final Uri URI = Uri.parse("content://com.halfcity.pipixia.prefs");
+    private static final Uri URI = Uri.parse("content://io.github.bancheng97.pipixia.prefs");
 
     private RemotePrefs() {}
 

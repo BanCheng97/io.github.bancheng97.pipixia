@@ -25,7 +25,7 @@ final class CrashLog {
     static final String CRASH_FILE = "pipixia_crash.txt";
     static final String STATUS_FILE = "pipixia_status.txt";
 
-    private static final String AUTHORITY = "com.halfcity.pipixia.prefs";
+    private static final String AUTHORITY = "io.github.bancheng97.pipixia.prefs";
     private static final Uri URI = Uri.parse("content://" + AUTHORITY);
     private static final int MAX_CHARS = 12000;
 

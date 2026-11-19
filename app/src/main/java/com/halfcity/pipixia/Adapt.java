@@ -13,7 +13,7 @@ import android.os.Bundle;
  */
 final class Adapt {
 
-    private static final Uri URI = Uri.parse("content://com.halfcity.pipixia.prefs");
+    private static final Uri URI = Uri.parse("content://io.github.bancheng97.pipixia.prefs");
 
     private Adapt() {}
 

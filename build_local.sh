@@ -7,7 +7,7 @@ ANDROID_JAR=/root/android/android.jar
 D8=/root/android/d8.jar
 SIGNER=/root/android/apksigner.jar
 XPOSED_JAR=/root/android/dl/api-82.jar
-VERSION=5.5
+VERSION=6.0
 OUT=pipixia-adfree-$VERSION.apk
 
 rm -rf build/classes build/dex build/base.apk build/$OUT
